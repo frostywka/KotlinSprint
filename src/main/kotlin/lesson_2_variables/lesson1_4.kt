@@ -2,7 +2,7 @@ package org.example.lesson_2_variables
 
 fun main() {
     val length: Long = 40868600000
-    val age: Byte = 27 //возраст Гагарина на момент полета (целых лет);
+    val age: Byte = 27
     val partOfDay: Float = 0.075f
     val seconds: Short = 6480
     val partOfYear: Double = 2.0547945205479453E-4
