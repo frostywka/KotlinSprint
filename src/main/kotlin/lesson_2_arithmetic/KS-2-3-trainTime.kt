@@ -31,4 +31,5 @@ fun main() {
         Время прибытия: $formatArrivalTime
     """.trimIndent()
     )
+
 }
