@@ -14,5 +14,4 @@ fun main() {
 
     println("Следующий ход $startPosition-$endPosition; ход $step")
 
-
 }
