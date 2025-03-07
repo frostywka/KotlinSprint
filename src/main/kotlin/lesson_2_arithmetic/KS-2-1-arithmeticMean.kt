@@ -1,4 +1,4 @@
-package org.example.lesson_3_arithmetic
+package lesson_2_arithmetic
 
 fun main() {
 
@@ -8,6 +8,6 @@ fun main() {
     val studentThreeGrade = 3
     val studentFourGrade = 5
 
-    val arithmeticMean: Float = (((studentOneGrade + studentTwoGrade + studentThreeGrade + studentFourGrade) / quantity).toFloat())
-    println(String.format("%.2f".format(arithmeticMean)))
+    val arithmeticMean = ((studentOneGrade + studentTwoGrade + studentThreeGrade + studentFourGrade).toFloat() / quantity)
+    println(arithmeticMean)
 }
