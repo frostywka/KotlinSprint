@@ -1,31 +1,21 @@
 package org.example.lesson_2_arithmetic
 
-import kotlin.time.times
+const val denominatorForPercent = 100f
 
-/*
-Задача 4 к Уроку 2
-
-В мобильной стратегии есть бафф (временное усиление какого-либо юнита или процесса),
- который дает +20% к добытым материалам. Было добыто 7 кристаллической и 11 железной руды без баффа –
- заранее известные данные, объявить и проинициализировать.
-
-Напиши программу, которая будет учитывать действие баффа и выводить в консоль количество “бонусных”
-(то есть тех материалов, которые даются “сверху” баффом). По одной строке на материал с его названием.
-
-Если получается нецелое число, то дробная часть должна отбрасываться.
- */
-
-fun main(){
+fun main() {
     val krystal = 7
     val iron = 11
-    val buff = 20/100f
+    val percent = 20
+    val buff = percent / denominatorForPercent
 
     val krystalUnderBuff: Int = ((krystal * buff).toInt())
     val ironUnderBuff: Int = (iron * buff).toInt()
 
-    println("""
+    println(
+        """
         Количество кристалов получаемых "сверху" под бафом: $krystalUnderBuff
         Количество руды получаемой "сверху" под бафом: $ironUnderBuff
-    """.trimIndent())
+    """.trimIndent()
+    )
 
 }
