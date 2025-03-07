@@ -7,8 +7,8 @@ fun main() {
     val averageWeightMax = 100
     val averageVolume = 120
 
-    var weightOne = 20
-    var volumeOne = 80
+    val weightOne = 20
+    val volumeOne = 80
     val weightTwo = 50
     val volumeTwo = 100
 
