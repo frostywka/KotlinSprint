@@ -1,15 +1,7 @@
 package org.example.lesson_2_arithmetic
 
-import kotlin.concurrent.timer
-
-
-/*
-. Сервер прислал данные, что поезд выехал в 9:39 и будет в пути 457 минут.
-
- – Создай целочисленные переменные и проинициализируй их этими данными;
- – Напиши программу, которая обработает данные и подсчитает час и минуту прибытия поезда;
- – Выведи результат в консоль.
- */
+const val minInHour = 60
+const val hourInDay = 24
 
 fun main() {
 
@@ -17,9 +9,9 @@ fun main() {
     val startTimeMinutes = 39
     val travelTime = 457
 
-    val totalMinutes = startTimeHours * 60 + travelTime + startTimeMinutes
-    val arrivalTimeHours = (totalMinutes / 60) % 24
-    val arrivalTimeMinutes = totalMinutes % 60
+    val totalMinutes = startTimeHours * minInHour + travelTime + startTimeMinutes
+    val arrivalTimeHours = (totalMinutes / minInHour) % hourInDay
+    val arrivalTimeMinutes = totalMinutes % minInHour
 
     val formatStartTime = String.format("%02d:%02d", startTimeHours, startTimeMinutes)
     val formatArrivalTime = String.format("%02d:%02d", arrivalTimeHours, arrivalTimeMinutes)
