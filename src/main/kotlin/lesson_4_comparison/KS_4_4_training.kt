@@ -1,13 +1,14 @@
 package org.example.lesson_4_comparison
 
+const val IS_TRAINING_FOR_HANDS_AND_PRESS: Boolean = true
+const val IS_TRAINING_FOR_LEGS_AND_BACK: Boolean = true
+
 fun main() {
-    val isTrainingForHandsAndPress: Boolean = true
-    val isTrainingForLegsAndBack: Boolean = true
 
     var trainingDay = 5
 
-    val evenTrainingDay = trainingDay == 5 && isTrainingForHandsAndPress == true
-    val oddTrainingDay = trainingDay == 6 && isTrainingForLegsAndBack == true
+    val evenTrainingDay = trainingDay == 5 && IS_TRAINING_FOR_HANDS_AND_PRESS == true
+    val oddTrainingDay = trainingDay == 6 && IS_TRAINING_FOR_LEGS_AND_BACK == true
 
     println(
         """
