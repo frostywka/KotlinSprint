@@ -5,10 +5,10 @@ const val WIN_NUMBER_TWO = 19
 
 fun main() {
 
-    println("Введите второе число:")
-    val secondNumber = readln().toInt()
     println("Введите первое число:")
     val firstNumber = readln().toInt()
+    println("Введите второе число:")
+    val secondNumber = readln().toInt()
 
     val isWinCombination =
         firstNumber == WIN_NUMBER_ONE && secondNumber == WIN_NUMBER_TWO || firstNumber == WIN_NUMBER_TWO && secondNumber == WIN_NUMBER_ONE
