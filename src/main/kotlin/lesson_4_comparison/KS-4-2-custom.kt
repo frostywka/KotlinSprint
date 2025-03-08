@@ -1,19 +1,21 @@
 package org.example.lesson_4_comparison
 
+const val AVERAGE_WEIGHT_MIN = 35
+const val AVERAGE_WEIGHT_MAX = 100
+const val AVERAGE_VOLUME = 120
 
 fun main() {
 
-    val averageWeightMin = 35
-    val averageWeightMax = 100
-    val averageVolume = 120
-
     val weightOne = 20
     val volumeOne = 80
+
     val weightTwo = 50
     val volumeTwo = 100
 
-    val checkOne: Boolean = averageWeightMin < weightOne && weightOne <= averageWeightMax && averageVolume > volumeOne
-    val checkTwo: Boolean = averageWeightMin < weightTwo && weightTwo <= averageWeightMax && averageVolume > volumeOne
+    val checkOne: Boolean =
+        AVERAGE_WEIGHT_MIN < weightOne && weightOne <= AVERAGE_WEIGHT_MAX && AVERAGE_VOLUME > volumeOne
+    val checkTwo: Boolean =
+        AVERAGE_WEIGHT_MIN < weightTwo && weightTwo <= AVERAGE_WEIGHT_MAX && AVERAGE_VOLUME > volumeOne
 
     println("Груз с весом $weightOne кг и объемом $volumeOne л соответствует категории 'Average': $checkOne ")
     println("Груз с весом $weightTwo кг и объемом $volumeTwo л соответствует категории 'Average': $checkTwo")
