@@ -1,9 +1,8 @@
 package org.example.lesson_4_comparison
 
-const val isTrainingForHandsAndPress: Boolean = true
-const val isTrainingForLegsAndBack: Boolean = true
-
 fun main() {
+    val isTrainingForHandsAndPress: Boolean = true
+    val isTrainingForLegsAndBack: Boolean = true
 
     var trainingDay = 5
 
