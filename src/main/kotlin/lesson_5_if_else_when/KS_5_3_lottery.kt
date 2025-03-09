@@ -5,9 +5,9 @@ const val WIN_NUMBER_TWO = 19
 
 fun main() {
 
-    println("Введите первое число:")
+    println("Введите первое число в диапазоне от 0 до 42:")
     val firstNumber = readln().toInt()
-    println("Введите второе число:")
+    println("Введите второе число в диапазоне от 0 до 42:")
     val secondNumber = readln().toInt()
 
     val isWinCombination =
