@@ -6,12 +6,12 @@ fun main() {
     var endPosition = "E4"
     var step = 1
 
-    println("Игрок начал партию c хода $startPosition-$endPosition; ход $step")
+    println("Игрок начал партию c хода [$startPosition-$endPosition; ход $step]")
 
     startPosition = "D2"
     endPosition = "D3"
     step = 2
 
-    println("Следующий ход $startPosition-$endPosition; ход $step")
+    println("Следующий ход [$startPosition-$endPosition; ход $step]")
 
 }
