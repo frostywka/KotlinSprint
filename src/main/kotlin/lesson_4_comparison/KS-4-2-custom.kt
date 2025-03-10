@@ -12,12 +12,12 @@ fun main() {
     val weightTwo = 50
     val volumeTwo = 100
 
-    val checkOne: Boolean =
+    val isCheckOne: Boolean =
         AVERAGE_WEIGHT_MIN < weightOne && weightOne <= AVERAGE_WEIGHT_MAX && AVERAGE_VOLUME > volumeOne
-    val checkTwo: Boolean =
+    val isCheckTwo: Boolean =
         AVERAGE_WEIGHT_MIN < weightTwo && weightTwo <= AVERAGE_WEIGHT_MAX && AVERAGE_VOLUME > volumeOne
 
-    println("Груз с весом $weightOne кг и объемом $volumeOne л соответствует категории 'Average': $checkOne ")
-    println("Груз с весом $weightTwo кг и объемом $volumeTwo л соответствует категории 'Average': $checkTwo")
+    println("Груз с весом $weightOne кг и объемом $volumeOne л соответствует категории 'Average': $isCheckOne ")
+    println("Груз с весом $weightTwo кг и объемом $volumeTwo л соответствует категории 'Average': $isCheckTwo")
 
 }
