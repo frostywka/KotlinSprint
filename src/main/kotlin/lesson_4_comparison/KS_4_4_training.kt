@@ -1,14 +1,12 @@
 package org.example.lesson_4_comparison
 
-const val IS_TRAINING_FOR_HANDS_AND_PRESS: Boolean = true
-const val IS_TRAINING_FOR_LEGS_AND_BACK: Boolean = true
-
 fun main() {
 
-    var trainingDay = 5
+    val trainingDay = 5
+    val isEvenDay = ((trainingDay % 2) == 0)
 
-    val evenTrainingDay = trainingDay == 5 && IS_TRAINING_FOR_HANDS_AND_PRESS == true
-    val oddTrainingDay = trainingDay == 6 && IS_TRAINING_FOR_LEGS_AND_BACK == true
+    val evenTrainingDay = isEvenDay
+    val oddTrainingDay = !isEvenDay
 
     println(
         """
@@ -19,4 +17,5 @@ fun main() {
         
     """.trimIndent()
     )
+
 }
