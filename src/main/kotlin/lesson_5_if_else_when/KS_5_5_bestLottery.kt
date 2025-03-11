@@ -1,5 +1,9 @@
 package org.example.lesson_5_if_else_when
 
+const val THREE_MATCHES = 3
+const val TWO_MATCHES = 2
+const val ONE_MATCH = 1
+
 fun main() {
 
     val randomA = (0..42).random()
@@ -17,11 +21,11 @@ fun main() {
 
     val checkNumbers = listOfRandom.intersect(listOfInput.toSet()).size
 
-    if (checkNumbers == 3) {
+    if (checkNumbers == THREE_MATCHES) {
         println("Вы выиграли ДЖЕКПОТ. Список выигрышных комбинация $listOfRandom")
-    } else if (checkNumbers == 2) {
+    } else if (checkNumbers == TWO_MATCHES) {
         println("Два совпадения и Вы получаете крупный приз. Список выигрышных комбинация $listOfRandom")
-    } else if (checkNumbers == 1) {
+    } else if (checkNumbers == ONE_MATCH) {
         println("ОДНО совпадение и Вы получаете утешительный приз. Список выигрышных комбинация $listOfRandom")
     } else {
         println(
