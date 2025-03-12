@@ -1,4 +1,4 @@
-package org.example.lesson_2_variables
+package org.example.lesson_1_variables
 
 fun main() {
     val allSeconds = 6480
