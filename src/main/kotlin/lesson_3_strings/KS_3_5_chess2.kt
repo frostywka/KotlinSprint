@@ -4,8 +4,7 @@ const val STEP = "D2-D4;0"
 
 fun main() {
 
-    val (move, number) = STEP.split(";")
-    val (from, to) = move.split("-")
+    val (from, to, number) = STEP.split("-", ";")
 
     println(
         """
