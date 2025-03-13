@@ -9,11 +9,7 @@ fun main() {
         println("Введите логин и пароль:")
         var login = readln()
         var password = readln()
-        if (login != LOGIN || password != PASSWORD) {
-            println("Введите логин пароль еще раз:")
-        }
     } while (login != LOGIN || password != PASSWORD)
     println("Авторизация прошла успешно")
-
 
 }
