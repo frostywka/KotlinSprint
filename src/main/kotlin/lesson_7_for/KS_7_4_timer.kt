@@ -5,11 +5,11 @@ fun main() {
     val second = readln().toInt()
 
     for (i in second downTo 0) {
-        if (i == 0) {
-            println("Время вышло")
-        } else {
+        if (i != 0) {
             println("Осталось до конца $i секунд")
         }
     }
-
+    println("Время вышло")
 }
+
+
