@@ -17,17 +17,15 @@ fun main() {
     val uppper = 'A'..'Z'
     var newPassword = ""
 
+// решение 1
     val password = (0..9) + ('a'..'z') + ('A'..'Z')
     val shuffle = password.shuffled()
     val size = shuffle.joinToString("", limit = length)
-    println(size)
+    println("Пароль $size через решение номер 1")
 
-
-//    for ( i in length downTo 0){
-//        newPassword += numbers.random()
-//        newPassword += lower.random()
-//        newPassword += uppper.random()
-//        println(newPassword)
-//    }
-
+// решение 2
+    for ( i in length downTo 1){
+        newPassword += (numbers+lower+uppper).random()
+    }
+    println("Пароль $newPassword через решение номер 2")
 }
