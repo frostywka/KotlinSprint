@@ -9,12 +9,10 @@ fun main() {
 
     var newPassword = ""
 
-// решение 1
     val password = numbers + lower + uppper
     val size = password.shuffled().take(length).joinToString("")
     println("Пароль $size через решение номер 1")
 
-// решение 2
     for ( i in length downTo 1){
         newPassword += (password).random()
     }
