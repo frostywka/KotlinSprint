@@ -16,10 +16,6 @@ fun main() {
     val sortList = list.sorted().toMutableList()
     sortList[0] = sortList[0].replaceFirstChar { it.uppercase() }
 
-    println(
-        """
-        ${sortList.distinct()}
-    """.trimIndent()
-    )
+    println(sortList.distinct())
 
 }
