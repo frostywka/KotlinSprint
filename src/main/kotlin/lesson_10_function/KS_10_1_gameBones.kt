@@ -19,9 +19,7 @@ fun main() {
     )
 }
 
-fun throwOfDice(): Int {
-    val count = 1..6
-    return count.random()
-}
+fun throwOfDice() = (1..6).random()
+
 
 
