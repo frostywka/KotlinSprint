@@ -1,8 +1,8 @@
 package org.example.lesson_10_function
 
 fun main() {
-    val human = throwOfDice()
-    val robot = throwOfDice()
+    val human = throwOfDiceFour()
+    val robot = throwOfDiceFour()
 
     val win = when {
         human < robot -> "Победила машина"
@@ -19,7 +19,7 @@ fun main() {
     )
 }
 
-fun throwOfDice() = (1..6).random()
+fun throwOfDiceFour() = (1..6).random()
 
 
 
