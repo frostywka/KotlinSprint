@@ -7,6 +7,9 @@ package org.example.lesson_11_classes_propetries_objects.KS_11_theory
 //    val weight = 1
 //    val count = 2
 //}
+//  val ingredients1 = Ingredients()
+//  ingredients1.name = "Лук"
+//  println(ingredients1.name)
 
 // Основной Конструктор (как параметры, которые приходят в обычную функцию) остаются переменные в теле.
 
@@ -36,11 +39,10 @@ class Ingredient(val name: String, val weight: Int, val count: Int) {
         this.isNeedToPrepare = isNeedToPrepare
     }
 
-
     // Блоки инициализации
-//    init {
-//        println("INIT блок инициализации $name")
-//    }
+    init {
+        println("Ингредиент $name создан")
+    }
 
     // Последовательность вызова Конструкторов
     // Вторичный конструктор

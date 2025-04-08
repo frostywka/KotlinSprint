@@ -1,6 +1,5 @@
 package org.example.lesson_11_classes_propetries_objects.KS_11_theory
 
-import org.example.lesson_12_constructor_init.Ingredient
 
 fun main() {
 
