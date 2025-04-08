@@ -36,11 +36,10 @@ class Ingredient(val name: String, val weight: Int, val count: Int) {
         this.isNeedToPrepare = isNeedToPrepare
     }
 
-
     // Блоки инициализации
-//    init {
-//        println("INIT блок инициализации $name")
-//    }
+    init {
+        println("Ингредиент $name создан")
+    }
 
     // Последовательность вызова Конструкторов
     // Вторичный конструктор
