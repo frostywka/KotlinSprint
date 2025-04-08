@@ -13,9 +13,9 @@ fun main() {
     println("Какой ингредиент Вы хотите Добавить?")
     val newIngredient = readln()
 
-    if (oldIngredient in listOfIngredients) {
+    val indexIngredients = listOfIngredients.indexOf(oldIngredient)
+    if (indexIngredients != -1) {
         println("Ингредиент есть")
-        val indexIngredients = listOfIngredients.indexOf(oldIngredient)
         listOfIngredients[indexIngredients] = newIngredient
 
         for (j in listOfIngredients) {
