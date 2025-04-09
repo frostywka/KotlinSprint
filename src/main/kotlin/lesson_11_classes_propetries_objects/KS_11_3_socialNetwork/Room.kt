@@ -1,6 +1,5 @@
 package org.example.lesson_11_classes_propetries_objects.KS_11_3_socialNetwork
 
-
 data class Member(
     val name: String,
     val nickName: String,
@@ -17,11 +16,12 @@ data class Room(
         listOfMembers.add(member)
     }
 
-    fun updateStatus(member: Member) {
+    fun updateStatus(member: Member, newStatus: String) {
         if (member in listOfMembers) {
-            println("Напиши новый статус")
-            val newStatus = readln()
             member.status = newStatus
+//            println("Напиши новый статус")
+//            val newStatus = readln()
+//            member.status = newStatus
         } else {
             println("Пользователь не найден")
         }
@@ -43,9 +43,7 @@ fun main() {
     }
     room1.addMember(member1)
     println("-------------")
-    room1.listOfMembers.forEach {
-        println("СТАЛО Name: ${it.name}, nickName: ${it.nickName}, Status: ${it.status}")
-    }
-    room1.updateStatus(member1)
+
+    room1.updateStatus(member1,"Active")
     println(room1.listOfMembers)
 }
