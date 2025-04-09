@@ -1,45 +1,41 @@
 package org.example.lesson_11_classes_propetries_objects.KS_11_3_socialNetwork
 
+
+class Member(
+    val name: String,
+    val nickName: String,
+    var status: String,
+)
+
 data class Room(
     val coverRoom: String,
     val nameRoom: String,
-    val listOfMembers: MutableList<String>,
-    val nickName: MutableList<String>,
-    var muteStatus: Boolean,
-    var microOffStatus: Boolean,
-    var talkingStatus: Boolean,
+    val listOfMembers: MutableList<Member>,
+) {
 
-    ) {
+    fun addMember(member: Member) {
+        listOfMembers.add(member)
 
-    fun addMember() {
-        println("Введите NickName кого добавить в комнату :")
-        listOfMembers.add(readln())
     }
 
-    fun isTalkingStatus(){
-        println("Введите NickName пользователя, которому необходимо поменять статус")
-        nickName.add(readln())
-        println("Пользователь Включил микрофон")
-        muteStatus = true
+    fun isStatus() {
     }
 }
 
 fun main() {
+    val member1 = Member("Mike","superMario","Muted")
+    val member2 = Member("Alex","Duck","Talking")
 
     val room1 = Room(
-        coverRoom = "чтотоНарисовано",
+        coverRoom = "cover.jpg",
         nameRoom = "Котики",
-        listOfMembers = mutableListOf("Pokemon", "Minion", "Santa"),
-        nickName = mutableListOf("Alex", "Mike", "Rose"),
-        muteStatus = true,
-        microOffStatus = true,
-        talkingStatus = true,
+        listOfMembers = mutableListOf(member2)
     )
 
     println(room1.listOfMembers)
-    room1.addMember()
+    room1.addMember(member1)
     println(room1.listOfMembers)
     println()
-    room1.isTalkingStatus()
-    println(room1.talkingStatus)
+    room1.isStatus()
+
 }
