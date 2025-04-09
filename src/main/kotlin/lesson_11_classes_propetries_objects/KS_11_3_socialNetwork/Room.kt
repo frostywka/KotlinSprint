@@ -19,9 +19,6 @@ data class Room(
     fun updateStatus(member: Member, newStatus: String) {
         if (member in listOfMembers) {
             member.status = newStatus
-//            println("Напиши новый статус")
-//            val newStatus = readln()
-//            member.status = newStatus
         } else {
             println("Пользователь не найден")
         }
