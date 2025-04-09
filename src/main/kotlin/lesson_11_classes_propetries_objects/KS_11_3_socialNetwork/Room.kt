@@ -15,16 +15,22 @@ data class Room(
 
     fun addMember(member: Member) {
         listOfMembers.add(member)
-
     }
 
-    fun isStatus() {
+    fun updateStatus(member: Member) {
+        if (member in listOfMembers) {
+            println("Напиши новый статус")
+            val newStatus = readln()
+            member.status = newStatus
+        } else {
+            println("Пользователь не найден")
+        }
     }
 }
 
 fun main() {
-    val member1 = Member("Mike","superMario","Muted")
-    val member2 = Member("Alex","Duck","Talking")
+    val member1 = Member("Mike", "superMario", "Muted")
+    val member2 = Member("Alex", "Duck", "Talking")
 
     val room1 = Room(
         coverRoom = "cover.jpg",
@@ -32,10 +38,14 @@ fun main() {
         listOfMembers = mutableListOf(member2)
     )
 
-    println(room1.listOfMembers)
+    room1.listOfMembers.forEach { it ->
+        println("БЫЛО Name: ${it.name}, nickName: ${it.nickName}, Status: ${it.status}")
+    }
     room1.addMember(member1)
+    println("-------------")
+    room1.listOfMembers.forEach {
+        println("СТАЛО Name: ${it.name}, nickName: ${it.nickName}, Status: ${it.status}")
+    }
+    room1.updateStatus(member1)
     println(room1.listOfMembers)
-    println()
-    room1.isStatus()
-
 }
