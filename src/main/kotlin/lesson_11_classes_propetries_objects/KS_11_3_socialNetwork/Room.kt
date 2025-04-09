@@ -1,7 +1,7 @@
 package org.example.lesson_11_classes_propetries_objects.KS_11_3_socialNetwork
 
 
-class Member(
+data class Member(
     val name: String,
     val nickName: String,
     var status: String,
