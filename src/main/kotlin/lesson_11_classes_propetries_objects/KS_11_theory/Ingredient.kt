@@ -7,6 +7,9 @@ package org.example.lesson_11_classes_propetries_objects.KS_11_theory
 //    val weight = 1
 //    val count = 2
 //}
+// ingredient1 = Ingredient()
+//  ingredient1.name = "Лук"
+// println(ingredient1.name1)
 
 // Основной Конструктор (как параметры, которые приходят в обычную функцию) остаются переменные в теле.
 
@@ -15,6 +18,9 @@ package org.example.lesson_11_classes_propetries_objects.KS_11_theory
 //    val weight = _weight
 //    val count = _count
 //}
+//  ingredient1 = Ingredient("картогка, 1 ,1 )
+//  println(ingredient1.name1)
+//
 
 // Упрощенная форма основного конструктора
 //class Ingredients1(val name: String, val weight: Int, val count: Int) {
