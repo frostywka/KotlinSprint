@@ -3,7 +3,7 @@ package org.example.lesson_12_constructor_init.KS_12_1_weather
 class Weather {
     var tempDay = 0
     var tempNight = 0
-    var isPrecipitation: Boolean? = null
+    var isPrecipitation: Boolean = false
 
     fun info() {
         println("Температура днем $tempDay,Температура ночью $tempNight, наличие остадков $isPrecipitation")
