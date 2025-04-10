@@ -4,14 +4,16 @@ data class Category(
     val id: String,
     val name: String,
     val description: String,
+    val imageUrl: String,
 )
 
 data class Recipe(
     val id: Int,
     val name: String,
     val categoryId: Int,
+    val imageUrl: String,
     val cookingMethod: MutableList<String>,
-    val listOfIngredients: MutableList<String>
+    val listOfIngredients: MutableList<Ingredient>
 )
 
 data class Ingredient(
