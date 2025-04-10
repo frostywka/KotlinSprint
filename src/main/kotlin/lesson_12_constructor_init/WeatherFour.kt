@@ -1,6 +1,6 @@
 package org.example.lesson_12_constructor_init
 
-class WeatherFour(val daysTemp: Int, var nightsTemp: Int, val weatherPrecipitation: Boolean) {
+class WeatherFour(daysTemp: Int,nightsTemp: Int,weatherPrecipitation: Boolean) {
 
     init {
         println("Температура днем $daysTemp в Цельсиях,Температура ночью $nightsTemp в Цельсиях, наличие остадков $weatherPrecipitation")
@@ -8,6 +8,6 @@ class WeatherFour(val daysTemp: Int, var nightsTemp: Int, val weatherPrecipitati
 }
 
 fun main() {
-    val weather1 = WeatherFour(30, 15, true)
-    val weather2 = WeatherFour(20, 10, false)
+    WeatherFour(30, 15, true)
+    WeatherFour(20, 10, false)
 }
