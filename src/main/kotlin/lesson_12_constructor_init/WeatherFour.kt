@@ -1,9 +1,9 @@
 package org.example.lesson_12_constructor_init
 
-class WeatherFour(daysTemp: Int,nightsTemp: Int,weatherPrecipitation: Boolean) {
+class WeatherFour(daysTemp: Int, nightsTemp: Int, weatherPrecipitation: Boolean) {
 
     init {
-        println("Температура днем $daysTemp в Цельсиях,Температура ночью $nightsTemp в Цельсиях, наличие остадков $weatherPrecipitation")
+        println("Температура днем $daysTemp в Цельсиях, Температура ночью $nightsTemp в Цельсиях, наличие остадков $weatherPrecipitation")
     }
 }
 
