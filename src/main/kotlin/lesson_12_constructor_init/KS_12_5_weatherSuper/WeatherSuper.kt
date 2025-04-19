@@ -1,47 +1,47 @@
 package org.example.lesson_12_constructor_init.KS_12_5_weatherSuper
 
-/*
-теперь она должна рассчитывать средние значения температур и считать количество дней с осадками за месяц.
-
-Представь, что данные ты получаешь от датчиков. Сымитируй их поведение с помощью random.
-
-+ в функции main() создай список и добавь в него с помощью цикла 30 объектов класса,
- передав в конструкторы случайные значения;
-- извлеки из списка дневные и ночные температуры, используя функцию map,
- а также посчитай количество дней с осадками;
-- вычисли средние значения дневных и ночных температур с помощью
-специальной extension-функции из стандартной библиотеки;
-- посчитай количество дней с осадками.
-
-Выведи результаты в консоль.
- */
-
 const val QUANTITY = 30
 
-data class WeatherSuper(var daysTemp: Int, var nightsTemp: Int, val weatherPrecipitation: Boolean)
+class WeatherSuper(var daysTemp: Int, var nightsTemp: Int, var weatherPrecipitation: Boolean)
 
 fun main() {
 
     val listOfWeather = mutableListOf<WeatherSuper>()
 
     for (i in 1..QUANTITY) {
-        var tempDay = (1..40).random()
-        var tempNight = (1..40).random()
-        var isPrecip = listOf(true, false).random()
-        val weatherSuper = WeatherSuper(tempDay, tempNight, isPrecip)
+        val tempDay = (1..40).random()
+        val tempNight = (1..40).random()
+        val isPrecip = listOf(true, false).random()
+        val weatherSuper = WeatherSuper(tempDay, tempNight, weatherPrecipitation = isPrecip)
         listOfWeather.add(weatherSuper)
     }
 
-    listOfWeather.forEach {
-        println(it)
-    }
-    println("---------")
-    val allTemp = listOfWeather.map {
-        listOf(it.daysTemp, it.nightsTemp)
-    }
-    allTemp.forEach { temp ->
-        println("дневная температура ${temp[0]}, ночная ${temp[1]}")
-    }
+//    listOfWeather.forEach {
+//        println("дневная температура ${it.daysTemp}, ночная ${it.nightsTemp}, осадки ${it.weatherPrecipitation}")
+//    }
 
+    println("---------вывод температуры-------")
+//    val allTemp = listOfWeather.map {
+//        listOf(it.daysTemp, it.nightsTemp)
+//    }
 
+    val daysWithPrecipitation = listOfWeather.count {
+        it.weatherPrecipitation
+    }
+    println("Количество дней с осадками = $daysWithPrecipitation")
+
+//    allTemp.forEach { temp ->
+//        println("дневная температура ${temp[0]}, ночная ${temp[1]}")
+//    }
+
+    val averageDayTemp = listOfWeather.map {
+        it.daysTemp
+    }.average()
+
+    val averageNightTemp = listOfWeather.map {
+        it.nightsTemp
+    }.average()
+
+    println("Средняя дневная температура $averageDayTemp")
+    println("Средняя ночная температура $averageNightTemp")
 }
