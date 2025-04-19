@@ -16,23 +16,23 @@ fun main() {
         listOfWeather.add(weatherSuper)
     }
 
-//    listOfWeather.forEach {
-//        println("дневная температура ${it.daysTemp}, ночная ${it.nightsTemp}, осадки ${it.weatherPrecipitation}")
-//    }
+    listOfWeather.forEach {
+        println("дневная температура ${it.daysTemp}, ночная ${it.nightsTemp}, осадки ${it.weatherPrecipitation}")
+    }
 
     println("---------вывод температуры-------")
-//    val allTemp = listOfWeather.map {
-//        listOf(it.daysTemp, it.nightsTemp)
-//    }
+    val allTemp = listOfWeather.map {
+        listOf(it.daysTemp, it.nightsTemp)
+    }
 
     val daysWithPrecipitation = listOfWeather.count {
         it.weatherPrecipitation
     }
     println("Количество дней с осадками = $daysWithPrecipitation")
 
-//    allTemp.forEach { temp ->
-//        println("дневная температура ${temp[0]}, ночная ${temp[1]}")
-//    }
+    allTemp.forEach { temp ->
+        println("дневная температура ${temp[0]}, ночная ${temp[1]}")
+    }
 
     val averageDayTemp = listOfWeather.map {
         it.daysTemp
