@@ -1,24 +1,43 @@
 package org.example.lesson_13_nullable_npe
 
-class PhoneBookFour(val name: String, val phoneNumber: Long?, val companyName: String?) {
+class ContactForm(val name: String, val phoneNumber: Long?, val companyName: String?) {
 
     fun printPhoneBook() {
-        println("Имя: $name, Номер: ${phoneNumber!!}, Компания: $companyName")
-//        println("Имя: $name, Номер: $phoneNumber, Компания: ${companyName ?: "<Строка не указана>"}")
+        println("Имя: $name, Номер: ${phoneNumber ?: "<Строка не указана>"}, Компания: ${companyName ?: "<Строка не указана>"}")
     }
 }
 
 fun main() {
 
-    val phoneBookList = listOf(
-        PhoneBookFour("Вася", readln().toLongOrNull(), null),
-//        PhoneBookFour("Иван", 22222222, null),
-//        PhoneBookFour("Леха", 33333333, "null"),
-//        PhoneBookFour("Макс", 44444444, "Эхо"),
-//        PhoneBookFour("Петя", 55555555, "Редит"),
-    )
+    val phoneBookList = mutableListOf<ContactForm>()
 
-    phoneBookList.forEach {
-        it.printPhoneBook()
+    while (true) {
+        println("Введите Имя контакта:")
+        val name = readln()
+
+        println("Введите Номер контакта:")
+        val phoneNumberInput = readln()
+
+        if (phoneNumberInput.isBlank()) {
+            println("Номер телефона не введен. Контакт не будет добавлен")
+            continue
+        }
+
+        val phoneNumber = phoneNumberInput.toLongOrNull()
+        if (phoneNumber == null) {
+            println("Номер телефона должен быть числом. Контакт не будет добавлен")
+            continue
+        }
+
+        println("Введите Компанию контакта:")
+        val companyName = readln().takeIf { it.isNotBlank() }
+
+        phoneBookList.add(ContactForm(name, phoneNumber, companyName.toString()))
+
+
+        phoneBookList.forEach {
+            it.printPhoneBook()
+        }
+
     }
 }
