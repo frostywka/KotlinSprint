@@ -11,6 +11,7 @@ fun main() {
         NewContact("Леха", 33333333, "null"),
         NewContact("Макс", 44444444, "Эхо"),
         NewContact("Петя", 55555555, "Редит"),
+        NewContact("Петя", 55555555, "Редит"),
     )
 
    val printCompany = phoneBookList.filter {
@@ -18,6 +19,19 @@ fun main() {
    }
 
    printCompany.forEach {
-       println("Название компании: ${it.companyName}")
+       println("Название компании через filter: ${it.companyName}")
    }
+
+    println()
+
+    val printCompany2 = phoneBookList.mapNotNull {
+        it.companyName
+    }
+    printCompany2.forEach {
+        println("Название компании с дублями: $it")
+    }
+    println()
+
+    val printCompanyToSet = printCompany2.toSet()
+    println("Название компании без дублей $printCompanyToSet")
 }
