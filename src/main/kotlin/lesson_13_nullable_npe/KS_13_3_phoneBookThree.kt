@@ -2,7 +2,6 @@ package org.example.lesson_13_nullable_npe
 
 class NewContact(val name: String, val phoneNumber: Long, val companyName: String?)
 
-
 fun main() {
 
     val phoneBookList = listOf(
@@ -14,24 +13,10 @@ fun main() {
         NewContact("Петя", 55555555, "Редит"),
     )
 
-   val printCompany = phoneBookList.filter {
-       it.companyName != null
-   }
-
-   printCompany.forEach {
-       println("Название компании через filter: ${it.companyName}")
-   }
-
-    println()
-
-    val printCompany2 = phoneBookList.mapNotNull {
+    val printCompany = phoneBookList.mapNotNull {
         it.companyName
     }
-    printCompany2.forEach {
-        println("Название компании с дублями: $it")
-    }
-    println()
 
-    val printCompanyToSet = printCompany2.toSet()
+    val printCompanyToSet = printCompany.toSet()
     println("Название компании без дублей $printCompanyToSet")
 }
