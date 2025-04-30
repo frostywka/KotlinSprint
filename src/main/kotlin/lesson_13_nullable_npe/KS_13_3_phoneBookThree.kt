@@ -15,8 +15,7 @@ fun main() {
 
     val printCompany = phoneBookList.mapNotNull {
         it.companyName
-    }
+    }.toSet()
 
-    val printCompanyToSet = printCompany.toSet()
-    println("Название компании без дублей $printCompanyToSet")
+    println("Название компании без дублей $printCompany")
 }
