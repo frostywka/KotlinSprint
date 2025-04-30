@@ -6,21 +6,21 @@ open class Liner(
     val speed: Int = 5000,
     val loadCapacity: Int = 100,
     val breakingIce: Boolean = false,
-) {
-}
+)
 
 class Cargo(
     name: String,
-): Liner(name, numberOfPassengers = 100, speed = 500, loadCapacity = 1000) {
-}
+    numberOfPassengers: Int = 100,
+    speed: Int = 500,
+    loadCapacity: Int = 1000,
+) : Liner(name, numberOfPassengers, speed, loadCapacity)
 
 class Icebreaker(
     name: String,
     numberOfPassengers: Int = 50,
     speed: Int = 100,
     loadCapacity: Int = 50,
-): Liner(name, numberOfPassengers, speed, loadCapacity, breakingIce = true) {
-}
+) : Liner(name, numberOfPassengers, speed, loadCapacity, breakingIce = true)
 
 fun main() {
 
