@@ -1,10 +1,10 @@
 package org.example.lesson_14_override_inheritance_openclass.theory.KS_14_2_gameTwo
 
-open class LinerTwo (
-    open val name: String = "Лайнер",
-    open val numberOfPassengers: Int = 1000,
-    open val speed: Int = 5000,
-    open val loadCapacity: Int = 100,
+open class LinerTwo(
+    val name: String = "Лайнер",
+    val numberOfPassengers: Int = 1000,
+    val speed: Int = 5000,
+    val loadCapacity: Int = 100,
     val breakingIce: Boolean = false
 ) {
 
@@ -12,40 +12,35 @@ open class LinerTwo (
         println("$name: может вмещать наибольшее кол-во пассажиров")
     }
 
-    open fun showInfo(){
+    fun showInfo() {
         println("Имя: $name, кол-во пассажиров: $numberOfPassengers, скорость: $speed, грузоподъемность: $loadCapacity")
     }
 
-    open fun printLoadingType(){
+    open fun printLoadingType() {
         println("Имя: $name: выдвигает горизонтальный трап со шкафута")
     }
 }
 
 class CargoTwo(
     name: String,
-): LinerTwo(name, numberOfPassengers = 100, speed = 500, loadCapacity = 1000) {
-
-    override fun showInfo() {
-        println("Имя: $name, кол-во пассажиров: $numberOfPassengers, скорость: $speed, грузоподъемность: $loadCapacity")
-    }
+    numberOfPassengers: Int = 100,
+    speed: Int = 500,
+    loadCapacity: Int = 1000,
+) : LinerTwo(name, numberOfPassengers, speed, loadCapacity) {
 
     override fun printLoadingType() {
         println("Имя: $name: активирует погрузочный кран")
     }
 }
 
-class IcebreakerTwo (
+class IcebreakerTwo(
     name: String,
     numberOfPassengers: Int = 50,
     speed: Int = 100,
     loadCapacity: Int = 50,
-): LinerTwo(name, numberOfPassengers, speed, loadCapacity,breakingIce = true) {
+) : LinerTwo(name, numberOfPassengers, speed, loadCapacity, breakingIce = true) {
 
-    override fun showInfo(){
-        println("Имя: $name, кол-во пассажиров: $numberOfPassengers, скорость: $speed, грузоподъемность: $loadCapacity")
-    }
-
-    override fun printLoadingType(){
+    override fun printLoadingType() {
         println("Имя: $name: открывает ворота со стороны кормы")
     }
 }
