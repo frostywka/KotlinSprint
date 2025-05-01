@@ -53,6 +53,9 @@ fun main() {
     liner1.printLoadingType()
     println()
 
+    // В этом же соль наследования) что класс-потомок может использовать методы класса-родителя.
+    //  примере cargo1.showInfo() и icebreaker1.showInfo()
+
     val cargo1 = CargoTwo("Грузовой")
     cargo1.showInfo()
     cargo1.printLoadingType()
