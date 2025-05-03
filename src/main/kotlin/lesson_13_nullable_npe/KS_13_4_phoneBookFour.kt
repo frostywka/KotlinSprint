@@ -15,7 +15,7 @@ fun main() {
         println("Введите Имя контакта:")
         val name = readln()
         if (name.isEmpty()) {
-            println("Имя контакта не введено")
+            println("Имя контакта не введено. Контакт не будет добавлен")
             break
         }
 
@@ -52,18 +52,17 @@ fun main() {
 
 
         println("Введите Компанию контакта:")
-//        val companyName = readln().trim().takeIf { it.isNotEmpty() }
         val companyName = readln().ifBlank {
             null
         }
 
-
         phoneBookList.add(ContactForm(name, phoneNumber, companyName))
         println("Контакт добавлен")
-        phoneBookList.forEach {
-            it.printPhoneBook()
-        }
+
         break
+    }
+    phoneBookList.forEach {
+        it.printPhoneBook()
     }
 }
 
