@@ -1,6 +1,7 @@
 package org.example.lesson_14_override_inheritance_openclass.theory.KS_14_3_geometry
 
-const val PI = 3.14
+const val WHITE = "white"
+const val BLACK = "black"
 
 abstract class Figure(
     val color: String,
@@ -9,21 +10,21 @@ abstract class Figure(
     abstract fun getPerimeter(): Double
 }
 
-class White(
+class Circle(
     color: String,
     val radius: Int = 5,
 ) : Figure(color) {
 
     override fun getArea(): Double {
-        return PI * radius * radius
+        return Math.PI * radius * radius
     }
 
     override fun getPerimeter(): Double {
-        return 2 * PI * radius
+        return 2 * Math.PI * radius
     }
 }
 
-class Black(
+class Rectangle(
     color: String,
     val width: Int = 4,
     val height: Int = 5,
@@ -40,23 +41,23 @@ class Black(
 
 fun main() {
 
-    val colorList = mutableListOf<Figure>()
+    val figureList = mutableListOf<Figure>()
 
-    colorList.add(White("white", radius = 3))
-    colorList.add(White("white", radius = 5))
-    colorList.add(Black("black", width = 3, height = 6))
-    colorList.add(Black("black", width = 4, height = 5))
+    figureList.add(Circle(WHITE, radius = 3))
+    figureList.add(Circle(WHITE, radius = 5))
+    figureList.add(Rectangle(BLACK, width = 3, height = 6))
+    figureList.add(Rectangle(BLACK, width = 4, height = 5))
 
     var totalBlackPerimeter = 0.0
     var totalWhiteArea = 0.0
 
-    for (figure in colorList) {
+    figureList.forEach { figure ->
         when (figure) {
-            is Black -> {
+            is Rectangle -> {
                 totalBlackPerimeter += figure.getPerimeter()
             }
 
-            is White -> {
+            is Circle -> {
                 totalWhiteArea += figure.getArea()
             }
         }
@@ -64,5 +65,4 @@ fun main() {
 
     println("Сумма периметров всех черных фигур: $totalBlackPerimeter")
     println("Сумма площадей всех белых фигур: $totalWhiteArea")
-
 }
