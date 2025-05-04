@@ -22,13 +22,6 @@ fun main() {
         println("Введите Номер контакта:")
         val phoneNumberInput = readln()
 
-//        val phoneNumber: Long
-
-//        when {
-//            phoneNumberInput.isBlank() -> {
-//                println("Номер телефона не введен. Контакт не будет добавлен")
-//                continue
-//            }
         if (phoneNumberInput.isEmpty()) {
             println("Номер телефона не введен. Контакт не будет добавлен")
             continue
@@ -39,17 +32,6 @@ fun main() {
             println("Номер телефона должен быть числом. Контакт не будет добавлен")
             continue
         }
-//
-//            phoneNumberInput.toLongOrNull() == null -> {
-//                println("Номер телефона должен быть числом. Контакт не будет добавлен")
-//                continue
-//            }
-//
-//            else -> {
-//                phoneNumber = phoneNumberInput.toLong()
-//                println("Номер телефона успешно добавлен")
-//            }
-
 
         println("Введите Компанию контакта:")
         val companyName = readln().ifBlank {
