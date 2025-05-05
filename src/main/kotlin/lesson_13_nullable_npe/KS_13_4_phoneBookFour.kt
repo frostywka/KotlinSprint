@@ -1,6 +1,6 @@
 package org.example.lesson_13_nullable_npe
 
-class ContactForm(val name: String, val phoneNumber: Long, val companyName: String?) {
+class ContactFormNew(val name: String, val phoneNumber: Long, val companyName: String?) {
 
     fun printPhoneBook() {
         println("Имя: $name, Номер: $phoneNumber, Компания: ${companyName ?: "<Строка не указана>"}")
@@ -9,7 +9,7 @@ class ContactForm(val name: String, val phoneNumber: Long, val companyName: Stri
 
 fun main() {
 
-    val phoneBookList = mutableListOf<ContactForm>()
+    val phoneBookList = mutableListOf<ContactFormNew>()
 
     while (true) {
         println("Введите Имя контакта:")
@@ -38,7 +38,7 @@ fun main() {
             null
         }
 
-        phoneBookList.add(ContactForm(name, phoneNumber, companyName))
+        phoneBookList.add(ContactFormNew(name, phoneNumber, companyName))
         println("Контакт добавлен")
 
         break
