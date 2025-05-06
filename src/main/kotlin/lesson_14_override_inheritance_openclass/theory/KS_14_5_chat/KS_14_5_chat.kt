@@ -1,4 +1,5 @@
 package org.example.lesson_14_override_inheritance_openclass.theory.KS_14_5_chat
+
 /*
 Создай класс Chat, который реализует обсуждение в мессенджере, аналогичному Discord. Класс должен иметь следующие методы:
 
@@ -15,8 +16,7 @@ package org.example.lesson_14_override_inheritance_openclass.theory.KS_14_5_chat
   Используй groupBy() для группировки сообщений по parentMessageId, если сообщение является экземпляром ChildMessage,
    или по id если это обычное сообщение.
  */
-open class Chat(
-    val id: Int,
+class Chat(
     val author: String,
     val message: String, // принимает, типо readln ?
     val listMessage: List<Message>,
@@ -26,23 +26,21 @@ open class Chat(
         println("Автор: $author, сообщение: $message")
     }
 
-    fun addThreadMessage(parentMessageId: Int){} // типо как тут ?
+    fun addThreadMessage(parentMessageId: Int) {} // типо как тут ?
 
-    fun printChat(){
-
+    fun printChat() {
     }
 }
 
-class Message(
-    id: Int,
-    author: String,
-    message: String,
-    listMessage: List<Message>,
-) : Chat(id, author, message, listMessage)
+open class Message(
+    val id: Int,
+)
 
 class ChildMessage(
     id: Int,
-    author: String,
-    message: String,
-    listMessage: List<Message>,
-) : Chat(id, author, message, listMessage)
+) : Message(id) {
+
+    fun printChildMessage() {
+        println("\tСообщение")
+    }
+}
