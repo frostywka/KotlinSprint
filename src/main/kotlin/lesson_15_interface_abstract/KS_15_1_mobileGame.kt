@@ -1,10 +1,44 @@
 package org.example.lesson_15_interface_abstract
 
-/*
-В мобильной игре есть разные существа. Напиши интерфейсы для летающих и плавающих существ.
+interface Flying {
+    fun fly()
+}
 
-- создай интерфейсы с методами передвижения для: карась, чайка, утка;
-- создай для каждого существа классы, реализующие соответствующие интерфейсы;
-- выведи сообщения в консоль, о том как они могут передвигаться.
- */
+interface Swimming {
+    fun swim()
+}
 
+class CrucianCarp(val name: String) : Swimming {
+    override fun swim() {
+        println("$name Тип передвижения: Плаванье")
+    }
+}
+
+class Seagull(val name: String) : Flying {
+    override fun fly() {
+        println("$name, Тип передвижения: Полет")
+    }
+}
+
+class Duck(val name: String) : Swimming, Flying {
+    override fun swim() {
+        println("$name, Тип передвижения: Плаванье")
+    }
+
+    override fun fly() {
+        println("$name, Тип передвижения: Полет")
+    }
+}
+
+fun main() {
+
+    val seagull = Seagull("Чайка")
+    seagull.fly()
+
+    val duck = Duck("Утка")
+    duck.fly()
+    duck.swim()
+
+    val crucianCarp = CrucianCarp("Карась")
+    crucianCarp.swim()
+}
