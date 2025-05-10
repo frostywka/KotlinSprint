@@ -7,8 +7,8 @@ fun main() {
     var humanWins = 0
 
     do {
-        val human = throwOfDice()
-        val robot = throwOfDice()
+        val human = throwOfDiceFour()
+        val robot = throwOfDiceFour()
 
         val win = when {
             human < robot -> "Победила машина"
@@ -47,6 +47,6 @@ fun round(): Boolean {
     }
 }
 
-fun throwOfDice(): Int {
+fun throwOfDiceFour(): Int {
     return (1..6).random()
 }
