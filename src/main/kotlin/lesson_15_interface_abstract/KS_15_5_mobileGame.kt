@@ -26,19 +26,19 @@ class CargoTruck(val countPassengers: Int, val countCargo: Int) : Movable, Passe
     }
 
     override fun uploadingPassengers() {
-        println("Загрузка пассажиров")
+        println("Загрузка $countPassengers пассажиров")
     }
 
     override fun unloadingPassengers() {
-        println("Высадка пассажиров")
+        println("Высадка $countPassengers пассажиров")
     }
 
     override fun uploadingCargo() {
-        println("Погрузка груза")
+        println("Погрузка $countCargo тонны груза ")
     }
 
     override fun unloadingCargo() {
-        println("Разгрузка груза")
+        println("Разгрузка $countCargo тонны груза")
     }
 
 }
@@ -53,11 +53,11 @@ class PassengerCars(val countPassengers: Int) : Movable, PassengerTransportation
     }
 
     override fun uploadingPassengers() {
-        println("Загрузка пассажиров")
+        println("Загрузка $countPassengers пассажиров")
     }
 
     override fun unloadingPassengers() {
-        println("Высадка пассажиров")
+        println("Высадка $countPassengers пассажиров")
     }
 }
 
