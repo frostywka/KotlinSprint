@@ -43,7 +43,7 @@ class CargoTruck(val countPassengers: Int, val countCargo: Int) : Movable, Passe
 
 }
 
-class PassengerCars(val countPassengers: Int, val countCargo: Int = 0) : Movable, PassengerTransportation {
+class PassengerCars(val countPassengers: Int) : Movable, PassengerTransportation {
     override fun moveToPointA() {
         println("Доехать до точки А")
     }
