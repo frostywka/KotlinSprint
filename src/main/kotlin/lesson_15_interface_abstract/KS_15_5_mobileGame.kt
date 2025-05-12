@@ -1,39 +1,68 @@
 package org.example.lesson_15_interface_abstract
 
-interface Movable{
-    fun moveToPointA(){
+interface Movable {
+    fun moveToPointA()
+    fun moveToPointB()
+}
+
+interface PassengerTransportation {
+    fun uploadingPassengers()
+    fun unloadingPassengers()
+}
+
+interface CargoTransportation {
+    fun uploadingCargo()
+    fun unloadingCargo()
+}
+
+class CargoTruck(val countPassengers: Int, val countCargo: Int) : Movable, PassengerTransportation,
+    CargoTransportation {
+    override fun moveToPointA() {
         println("Доехать до точки А")
     }
 
-    fun moveToPointB(){
+    override fun moveToPointB() {
         println("Доехать до точки Б")
     }
-}
 
-interface PassengerTransportation{
-    fun uploadingPassengers(){
+    override fun uploadingPassengers() {
         println("Загрузка пассажиров")
     }
 
-    fun unloadingPassengers(){
+    override fun unloadingPassengers() {
         println("Высадка пассажиров")
     }
-}
-interface CargoTransportation{
-    fun uploadingCargo(){
+
+    override fun uploadingCargo() {
         println("Погрузка груза")
     }
 
-    fun unloadingCargo(){
+    override fun unloadingCargo() {
         println("Разгрузка груза")
+    }
+
+}
+
+class PassengerCars(val countPassengers: Int, val countCargo: Int = 0) : Movable, PassengerTransportation {
+    override fun moveToPointA() {
+        println("Доехать до точки А")
+    }
+
+    override fun moveToPointB() {
+        println("Доехать до точки Б")
+    }
+
+    override fun uploadingPassengers() {
+        println("Загрузка пассажиров")
+    }
+
+    override fun unloadingPassengers() {
+        println("Высадка пассажиров")
     }
 }
 
-class CargoTruck(val countPassengers: Int, val countCargo: Int): Movable, PassengerTransportation, CargoTransportation
-class PassengerCars(val countPassengers: Int, val countCargo: Int = 0): Movable, PassengerTransportation
-
 fun main() {
-    val cargoTruckOne = CargoTruck(1,2)
+    val cargoTruckOne = CargoTruck(1, 2)
     cargoTruckOne.moveToPointA()
     cargoTruckOne.uploadingCargo()
     cargoTruckOne.uploadingPassengers()
