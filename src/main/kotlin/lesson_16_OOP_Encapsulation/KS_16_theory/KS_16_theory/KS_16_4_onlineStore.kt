@@ -2,12 +2,12 @@ package org.example.lesson_16_OOP_Encapsulation.KS_16_theory.KS_16_theory
 
 class Order(private val orderNumber: Int, var readyStatus: Boolean) {
 
-    fun createRequestToChangeStatus() { // имитация новой заявки
-        changeStatusOrder()
+    fun createRequestToChangeStatus(newStatus: Boolean) {
+        changeStatusOrder(newStatus)
     }
 
-    fun changeStatusOrder() { //
-        readyStatus = true
+    private fun changeStatusOrder(newStatus: Boolean) {
+        readyStatus = newStatus
     }
 
 }
@@ -15,7 +15,7 @@ class Order(private val orderNumber: Int, var readyStatus: Boolean) {
 fun main() {
 
     val order = Order(1111, false)
-    order.createRequestToChangeStatus()
+    order.createRequestToChangeStatus(true)
 
     println(order.readyStatus)
 }
