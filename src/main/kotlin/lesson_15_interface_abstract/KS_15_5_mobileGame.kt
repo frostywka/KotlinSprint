@@ -17,6 +17,7 @@ interface CargoTransportation {
 
 class CargoTruck(val countPassengers: Int, val countCargo: Int) : Movable, PassengerTransportation,
     CargoTransportation {
+
     override fun moveToPointA() {
         println("Доехать до точки А")
     }
@@ -34,13 +35,12 @@ class CargoTruck(val countPassengers: Int, val countCargo: Int) : Movable, Passe
     }
 
     override fun uploadingCargo() {
-        println("Погрузка $countCargo тонны груза ")
+        println("Погрузка $countCargo тонны груза")
     }
 
     override fun unloadingCargo() {
         println("Разгрузка $countCargo тонны груза")
     }
-
 }
 
 class PassengerCars(val countPassengers: Int) : Movable, PassengerTransportation {
@@ -62,6 +62,7 @@ class PassengerCars(val countPassengers: Int) : Movable, PassengerTransportation
 }
 
 fun main() {
+
     val cargoTruckOne = CargoTruck(1, 2)
     cargoTruckOne.moveToPointA()
     cargoTruckOne.uploadingCargo()
@@ -71,16 +72,17 @@ fun main() {
     cargoTruckOne.unloadingPassengers()
     println("")
 
-    val passengerCarsOne = PassengerCars(3)
+    val passengerCarsOne = PassengerCars(5)
     passengerCarsOne.moveToPointA()
     passengerCarsOne.uploadingPassengers()
     passengerCarsOne.moveToPointB()
     passengerCarsOne.unloadingPassengers()
     println("")
 
-    val passengerCarsTwo = PassengerCars(2)
-    passengerCarsTwo.moveToPointA()
-    passengerCarsTwo.uploadingPassengers()
-    passengerCarsTwo.moveToPointB()
-    passengerCarsTwo.unloadingPassengers()
+    val totalPassenger = cargoTruckOne.countPassengers + passengerCarsOne.countPassengers
+    println("Количество перевезенных пассажиров: $totalPassenger")
+
+    val totalCargo = cargoTruckOne.countCargo
+    println("Количество перевезенного груза: $totalCargo")
+
 }
