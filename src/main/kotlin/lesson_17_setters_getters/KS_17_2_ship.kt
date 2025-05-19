@@ -6,7 +6,6 @@ class Ship(
     val portParam: String,
 ) {
     var name = nameParam
-        get() = field
         set(value) {
             println("Значение неизменно")
         }
