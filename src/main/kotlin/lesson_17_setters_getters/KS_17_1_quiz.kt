@@ -4,13 +4,13 @@ class Quiz(
     questionParam: String,
     answerParam: String
 ) {
-    val question: String
-        get() = "Кто ты?"
+    var question: String = questionParam
+        get() = field
 
     var answer: String = answerParam
         get() = field
         set(value) {
-            field = "I'm a batman"
+            field = value
         }
 }
 
@@ -19,7 +19,7 @@ fun main() {
     val quiz = Quiz("Вопрос", "Ответ")
 
     println("Какой хочешь задать вопрос: ${quiz.question}")
-    quiz.answer = "Что-то"
+    quiz.answer = "i'm Batman"
     println("Какой ответ хочешь услышать: ${quiz.answer}")
 
 }
