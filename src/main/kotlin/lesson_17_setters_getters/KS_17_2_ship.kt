@@ -5,15 +5,10 @@ class Ship(
     val middleSpeedParam: Double,
     val portParam: String,
 ) {
-    private fun error(){
-        println("Значение НЕИЗМЕННО")
-    }
-
     var name = nameParam
         get() = field
         set(value) {
-            field = error().toString()
-//            field = "Поле с Именем - Неизменно"
+            println("Значение неизменно")
         }
 }
 
