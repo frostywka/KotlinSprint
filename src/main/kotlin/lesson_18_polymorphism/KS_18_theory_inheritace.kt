@@ -20,42 +20,53 @@ Parametric (параметрический) – программа может б
 Касаемо Kotlin – это история про дженерики (или обобщенное программирование). О них поговорим в другой раз
 */
 
-class NoteAppItem {
 
-    fun addItemToCell(
-        title: String,
-        creationDate: Date,
-        type: String,
-        data: String,
-    ) {
-        println("Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data")
+// Пример Наследование
+
+open class NoteAppItemNew {
+
+    open fun getItemData() = ""
+
+}
+
+class MessageItem(
+    private val title: String,
+    private val creationDate: Date,
+    private val type: String,
+    private val data: String,
+) : NoteAppItemNew() {
+    override fun getItemData(): String {
+        return "Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data"
     }
+}
 
-    fun addItemToCell(
-        title: String,
-        creationDate: Date,
-        type: String,
-        data: Long,
-    ) {
-        println("Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data")
+class PhoneMessageItem(
+    private val title: String,
+    private val creationDate: Date,
+    private val type: String,
+    private val data: Long,
+) : NoteAppItemNew() {
+    override fun getItemData(): String {
+        return "Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data"
     }
+}
 
-    fun addItemToCell(
-        title: String,
-        creationDate: Date,
-        type: String,
-        data: List<String>,
-    ) {
-        println("Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data")
+class ListMessageItem(
+    private val title: String,
+    private val creationDate: Date,
+    private val type: String,
+    private val data: List<String>,
+) : NoteAppItemNew() {
+    override fun getItemData(): String {
+        return "Item \"$title\" added to cell - $creationDate\nType: $type\nDate: $data"
     }
 }
 
 fun main() {
 
     val creationDate = Date()
-    val note = NoteAppItem()
 
-    note.addItemToCell(
+    val messageItem: NoteAppItemNew = MessageItem(
         "call sister",
         creationDate,
         "message",
@@ -63,7 +74,7 @@ fun main() {
     )
     println()
 
-    note.addItemToCell(
+    val phoneMessageItem: NoteAppItemNew = PhoneMessageItem(
         "sister's number",
         creationDate,
         "phone",
@@ -71,11 +82,25 @@ fun main() {
     )
     println()
 
-    note.addItemToCell(
+    val listMessageItem: NoteAppItemNew = ListMessageItem(
         "toDoList",
         creationDate,
         "list",
         listOf("wash dog", "do the cleaning", "buy new shoes"),
     )
 
+//    println(messageItem.getItemData())
+//    println()
+//    println(phoneMessageItem.getItemData())
+//    println()
+//    println(listMessageItem.getItemData())
+
+    val arrayOfNotes = arrayOf<NoteAppItemNew>(messageItem,phoneMessageItem,listMessageItem)
+    showAllNotes(arrayOfNotes)
+}
+
+fun showAllNotes(notes: Array<NoteAppItemNew>){
+    notes.forEach {
+        println(it.getItemData())
+    }
 }
